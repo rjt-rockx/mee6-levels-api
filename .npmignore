@@ -1,0 +1,15 @@
+# Log files
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# npm package lock
+package-lock.json
+
+# ESLint configuration
+.eslintrc
+
+# GitIgnore
+.gitignore
