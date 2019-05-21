@@ -4,7 +4,7 @@
   "description": "An API wrapper for Mee6 levels",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint ./"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
   "homepage": "https://github.com/rjt-rockx/mee6api#readme",
   "dependencies": {
     "got": "^9.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }
