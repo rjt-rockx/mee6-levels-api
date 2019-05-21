@@ -33,7 +33,7 @@ class Mee6Api {
 	 */
 	static async getRoleRewards(guild) {
 		const guildId = this.getId(guild);
-		const { body: { role_rewards } } = await got.get(`${guildId}?limit=0`, this.options);
+		const { body: { role_rewards } } = await got.get(`${guildId}?limit=1`, this.options);
 		return role_rewards.sort((a, b) => a.rank - b.rank);
 	}
 
