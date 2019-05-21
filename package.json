@@ -1,0 +1,30 @@
+{
+  "name": "mee6api",
+  "version": "1.0.0",
+  "description": "An API wrapper for Mee6 levels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjt-rockx/mee6api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "mee6",
+    "discord",
+    "js",
+    "javascript",
+    "api"
+  ],
+  "author": "rjt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rjt-rockx/mee6api/issues"
+  },
+  "homepage": "https://github.com/rjt-rockx/mee6api#readme",
+  "dependencies": {
+    "got": "^9.6.0"
+  }
+}
