@@ -48,10 +48,11 @@ class Mee6Api {
 		const guildId = this.getId(guild);
 		const { body: { players } } = await got.get(`${guildId}?limit=${limit}&page=${page}`, this.options);
 		return players.map((user, index) => {
-			const { id, level, username, discriminator } = user;
+			const { id, level, username, discriminator, avatar } = user;
+			const avatarUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}?size=2048`;
 			const [userXp, levelXp, totalXp] = user.detailed_xp;
 			return {
-				id, level, username, discriminator,
+				id, level, username, discriminator, avatarUrl,
 				tag: `${username}#${discriminator}`,
 				xp: { userXp, levelXp, totalXp },
 				rank: (limit * page) + index + 1
