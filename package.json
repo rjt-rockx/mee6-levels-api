@@ -1,5 +1,5 @@
 {
-  "name": "mee6api",
+  "name": "mee6-levels-api",
   "version": "1.0.0",
   "description": "An API wrapper for Mee6 levels",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rjt-rockx/mee6api.git"
+    "url": "git+https://github.com/rjt-rockx/mee6-levels-api.git"
   },
   "keywords": [
     "nodejs",
@@ -21,9 +21,9 @@
   "author": "rjt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rjt-rockx/mee6api/issues"
+    "url": "https://github.com/rjt-rockx/mee6-levels-api/issues"
   },
-  "homepage": "https://github.com/rjt-rockx/mee6api#readme",
+  "homepage": "https://github.com/rjt-rockx/mee6-levels-api#readme",
   "dependencies": {
     "got": "^9.6.0"
   },

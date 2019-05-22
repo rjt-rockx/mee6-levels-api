@@ -3,10 +3,10 @@ const got = require("got");
 /**
  * A wrapper around the Mee6 levels API to fetch the leaderboard, role rewards and user xp.
  */
-class Mee6Api {
+class Mee6LevelsApi {
 
 	/**
-	 * Create a new Mee6Api instance.
+	 * Create a new Mee6LevelsApi instance.
 	 */
 	constructor() {
 		this.baseUrl = "https://mee6.xyz/api/plugins/levels/leaderboard/";
@@ -90,4 +90,4 @@ class Mee6Api {
 	}
 }
 
-module.exports = Mee6Api;
+module.exports = Mee6LevelsApi;
