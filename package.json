@@ -1,11 +1,8 @@
 {
   "name": "mee6-levels-api",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An API wrapper for Mee6 levels",
   "main": "index.js",
-  "scripts": {
-    "test": "eslint ./"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rjt-rockx/mee6-levels-api.git"
@@ -25,9 +22,6 @@
   },
   "homepage": "https://github.com/rjt-rockx/mee6-levels-api#readme",
   "dependencies": {
-    "got": "^9.6.0"
-  },
-  "devDependencies": {
-    "eslint": "^5.16.0"
+    "got": "^10.0.3"
   }
 }

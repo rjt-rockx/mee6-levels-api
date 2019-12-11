@@ -1,17 +1,13 @@
 const got = require("got");
+const options = {
+	prefixUrl: "https://mee6.xyz/api/plugins/levels/leaderboard/",
+	responseType: "json"
+};
 
 /**
  * A wrapper around the Mee6 levels API to fetch the leaderboard, role rewards and user xp.
  */
 class Mee6LevelsApi {
-
-	/**
-	 * Create a new Mee6LevelsApi instance.
-	 */
-	constructor() {
-		this.baseUrl = "https://mee6.xyz/api/plugins/levels/leaderboard/";
-		this.options = { baseUrl: this.baseUrl, json: true };
-	}
 
 	/**
 	 * Resolves a guild or user to its ID.
@@ -33,7 +29,7 @@ class Mee6LevelsApi {
 	 */
 	static async getRoleRewards(guild) {
 		const guildId = this.getId(guild);
-		const { body: { role_rewards } } = await got.get(`${guildId}?limit=1`, this.options);
+		const { body: { role_rewards } } = await got.get(`${guildId}?limit=1`, options);
 		return role_rewards.sort((a, b) => a.rank - b.rank).map(({ rank, ...rest }) => ({ ...rest, level: rank }));
 	}
 
@@ -46,7 +42,7 @@ class Mee6LevelsApi {
 	 */
 	static async getLeaderboardPage(guild, limit = 1000, page = 0) {
 		const guildId = this.getId(guild);
-		const { body: { players } } = await got.get(`${guildId}?limit=${limit}&page=${page}`, this.options);
+		const { body: { players } } = await got.get(`${guildId}?limit=${limit}&page=${page}`, options);
 		return players.map((user, index) => {
 			const { id, level, username, discriminator, avatar } = user;
 			const avatarUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}?size=2048`;
@@ -85,8 +81,14 @@ class Mee6LevelsApi {
 	 */
 	static async getUserXp(guild, user) {
 		const userId = this.getId(user);
-		const leaderboard = await this.getLeaderboard(guild);
-		return leaderboard.find(user => user.id === userId);
+		let pageNumber = 0, page, userInfo;
+		while (true) {
+			page = await this.getLeaderboardPage(guild, 1000, pageNumber);
+			userInfo = page.find(u => u.id === userId);
+			if (page.length < 1000 || userInfo) break;
+			pageNumber += 1;
+		}
+		return userInfo;
 	}
 }
 
