@@ -9,7 +9,7 @@ node_modules
 package-lock.json
 
 # ESLint configuration
-.eslintrc
+.eslintrc*
 
 # GitIgnore
 .gitignore
