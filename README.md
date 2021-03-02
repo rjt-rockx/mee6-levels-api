@@ -1,5 +1,10 @@
 # mee6-levels-api
-An API wrapper for Mee6 levels
+An unofficial API wrapper for the Mee6 levels plugin.
+
+## Note
+While this package works (at the time of writing this), it is neither developed nor officially supported by the Mee6 team. The API route used here is undocumented and is subject to change at any point of time. 
+
+Please do not ask for support for this package at the Mee6 Support server. Instead, you may message me directly at rjt#2336 or open an issue here for any concerns related to this package. 
 
 ## Usage
 ```js
