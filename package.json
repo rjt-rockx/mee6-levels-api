@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "description": "An API wrapper for Mee6 levels",
   "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rjt-rockx/mee6-levels-api.git"
