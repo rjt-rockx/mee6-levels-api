@@ -14,7 +14,7 @@ const fetch = async url => {
 };
 
 /**
- * A wrapper around the Mee6 levels API to fetch the leaderboard, role rewards and user xp.
+ * An unofficial wrapper around the Mee6 levels API to fetch the leaderboard, role rewards and user xp data.
  */
 class Mee6LevelsApi {
 
