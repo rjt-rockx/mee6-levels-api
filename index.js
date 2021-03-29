@@ -1,7 +1,16 @@
 const got = require("got");
-const options = {
-	prefixUrl: "https://mee6.xyz/api/plugins/levels/leaderboard/",
-	responseType: "json"
+
+const fetch = async url => {
+	const response = await got.get(url, {
+		prefixUrl: "https://mee6.xyz/api/plugins/levels/leaderboard/",
+		responseType: "json"
+	});
+	if (response.statusCode !== 200) {
+		if (response.body.error && response.body.error.message)
+			throw new Error(`${response.statusCode}: ${response.body.error.message}`);
+		else throw new Error(`${response.statusCode}: ${response.statusMessage}`);
+	}
+	return response.body;
 };
 
 /**
@@ -29,7 +38,7 @@ class Mee6LevelsApi {
 	 */
 	static async getRoleRewards(guild) {
 		const guildId = this.getId(guild);
-		const { body: { role_rewards } } = await got.get(`${guildId}?limit=1`, options);
+		const { role_rewards } = await fetch(`${guildId}?limit=1`);
 		return role_rewards.sort((a, b) => a.rank - b.rank).map(({ rank, ...rest }) => ({ ...rest, level: rank }));
 	}
 
@@ -42,7 +51,7 @@ class Mee6LevelsApi {
 	 */
 	static async getLeaderboardPage(guild, limit = 1000, page = 0) {
 		const guildId = this.getId(guild);
-		const { body: { players } } = await got.get(`${guildId}?limit=${limit}&page=${page}`, options);
+		const { players } = await fetch(`${guildId}?limit=${limit}&page=${page}`);
 		return players.map((user, index) => {
 			const { id, level, username, discriminator, avatar, message_count: messageCount } = user;
 			const avatarUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}?size=2048`;
