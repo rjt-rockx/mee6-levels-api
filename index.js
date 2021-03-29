@@ -54,7 +54,7 @@ class Mee6LevelsApi {
 		const { players } = await fetch(`${guildId}?limit=${limit}&page=${page}`);
 		return players.map((user, index) => {
 			const { id, level, username, discriminator, avatar, message_count: messageCount } = user;
-			const avatarUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}?size=2048`;
+			const avatarUrl = `https://cdn.discordapp.com/avatars/${id}/${avatar}`;
 			const [userXp, levelXp, totalXp] = user.detailed_xp;
 			return {
 				id, level, username, discriminator, avatarUrl, messageCount,
