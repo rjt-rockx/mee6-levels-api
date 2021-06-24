@@ -6,6 +6,12 @@ While this package works (at the time of writing this), it is neither developed 
 
 Please do not ask for support for this package at the Mee6 Support server. Instead, you may message me directly at rjt#2336 or open an issue here for any concerns related to this package. 
 
+## Installation
+Install from npm as follows:
+
+`npm install mee6-levels-api`
+
+
 ## Usage
 ```js
 const Mee6LevelsApi = require("mee6-levels-api");
