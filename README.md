@@ -35,3 +35,7 @@ Mee6LevelsApi.getUserXp(guildId, userId).then(user => {
 	console.log(`${user.tag} is at level ${user.level} and rank ${user.rank}.`);
 });
 ```
+
+## Configuration
+
+Open the leaderboard settings in the MEE6 dashboard and enable the option: `Make my server's leaderboard public`. It is not possible to fetch data from the dashboard if this option is not enabled and the error 'Response code 401' will be returned.
