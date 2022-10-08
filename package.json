@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/rjt-rockx/mee6-levels-api#readme",
   "dependencies": {
-    "got": "^10.3.0"
+    "got": "^11.8.5"
   }
 }
