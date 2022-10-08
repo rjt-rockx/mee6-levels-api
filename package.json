@@ -1,6 +1,6 @@
 {
   "name": "mee6-levels-api",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "An unofficial wrapper around the Mee6 levels API to fetch the leaderboard, role rewards and user xp data.",
   "main": "index.js",
   "types": "index.d.ts",
